@@ -1,0 +1,27 @@
+version: "3.0"
+services:
+  postgres:
+    image: postgres:11
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5438:5432
+  keycloak:
+    image: quay.io/keycloak/keycloak:11.0.2
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - DB_VENDOR=POSTGRES
+      - DB_ADDR=postgres
+      - DB_DATABASE=keycloak
+      - DB_USER=keycloak
+      - DB_PASSWORD=password
+    ports:
+      - 8889:8080
+
+volumes:
+  pg-data:

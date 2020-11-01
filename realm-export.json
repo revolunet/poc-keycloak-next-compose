@@ -1,0 +1,45 @@
+{
+  "id": "demo",
+  "realm": "demo",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": true,
+  "registrationEmailAsUsername": true,
+  "rememberMe": true,
+  "verifyEmail": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": true,
+  "requiredCredentials": ["password"],
+  "passwordPolicy": "forceExpiredPasswordChange(90) and length(8) and specialChars(1) and digits(1)",
+  "smtpServer": {
+    "password": "password",
+    "starttls": "",
+    "auth": "true",
+    "host": "smtp.pouet.com",
+    "from": "pouet@pouet.com",
+    "ssl": "true",
+    "user": "username"
+  },
+  "clients": [
+    {
+      "clientId": "NextJS",
+      "rootUrl": "http://127.0.0.1:3000/",
+      "adminUrl": "http://127.0.0.1:3000/",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": ["http://127.0.0.1:3000/*"],
+      "webOrigins": ["http://127.0.0.1:3000"],
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "publicClient": true,
+      "protocol": "openid-connect"
+    }
+  ],
+  "keycloakVersion": "11.0.2",
+  "userManagedAccessAllowed": false
+}

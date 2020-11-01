@@ -6,10 +6,10 @@ based on [react-keycloak](https://github.com/react-keycloak/react-keycloak)
 
 ## Setup
 
-start a shell with `docker-compose up` and another one with `yard dev`
+start a shell with `docker-compose up` and another one with `yarn dev`
 
 The web app start on http://127.0.0.1:3000 and the keycloak admin UI on http://127.0.0.1:8889
 
 Keycloak default admin account is `admin/admin`
 
-Load an initial realm and client from `./realm-export.json` with `./restore-realm.sh`
+Load an initial `demo` realm and client from `./realm-export.json` with `./restore-realm.sh`
